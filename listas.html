@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="mensagem"></h2>
+    <div id="container">
+    
+    </div>
+    <script>
+        var usuarios= ["thalita","matheus","vivian","claudia"];
+        var senhas = [1111,2222,3333,4444];
+        lista();
+        function lista(){
+
+
+            var Listaitem = document.createElement("ul");
+
+            var listaContainer = document.getElementById("container");
+
+            for (let i=0 ; i < senhas.length ; i++){
+                listaItem = document.createElement("li");
+
+                listaItem.innerHTML = "Usuario: "+ usuarios[i] + " Senha:" + senhas[i];
+
+                listaContainer.appendChild(listaItem);
+            }
+        }
+
+        function banco(){
+            for(let i = 0; i < senhas.length; i++){
+                console.log(usuarios[i]);
+                console.log(senhas[i]);
+            }
+        }
+        function inserirposicao(indice,nome,senha){
+            usuarios[indice] = nome;
+            senhas[indice] = senha;
+        }
+        function inserirfinal(nome,senha){
+            usuarios.push(nome);
+            senhas.push(senha);
+        }
+        inserirfinal("kayky",2);
+        inserirfinal("kayky2",2222);
+        for(let i = 0; i < senhas.length; i++){
+            document.getElementById("mensagem").innerHTML = `O usuario ${[i]} tem o nome de: ${usuarios[i]} e a senha de ${senhas[i]}`
+        }
+
+    </script>
+
+
+</body>
+</html>
